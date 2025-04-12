@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book an Appointment - Eswar Hospitals</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('Hospital_Picture.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 50px 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    a {
+      margin-top: 20px;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      background-color: #007bff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    #success-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #90ee90;
+      background-color: rgba(0, 128, 0, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Book an Appointment</h1>
+    <form id="appointmentForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="department">Department:</label>
+      <select id="department" name="department" required>
+        <option value="cardiology">Cardiology</option>
+        <option value="neurology">Neurology</option>
+        <option value="pediatrics">Pediatrics</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="success-message">✅ Appointment successfully submitted! We will contact you soon.</div>
+
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent form from reloading the page
+      document.getElementById("success-message").style.display = "block"; // Show success message
+      this.reset(); // Clear form fields
+    });
+  </script>
+</body>
+</html>
